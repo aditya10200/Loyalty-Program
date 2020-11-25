@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import { Link } from "@reach/router";
 import { signInWithGoogle } from "../firebase";
 import { auth } from "../firebase";
+import { AddCircleOutlineRounded } from '@material-ui/icons';
+import { Button, TextField, Container } from '@material-ui/core';
 
 
 const SignIn = () => {
@@ -44,7 +46,7 @@ const SignIn = () => {
             className="my-1 p-1 w-full"
             name="userEmail"
             value = {email}
-            placeholder="E.g: faruq123@gmail.com"
+            placeholder="E.g: adi123 @gmail.com"
             id="userEmail"
             onChange = {(event) => onChangeHandler(event)}
           />
@@ -65,14 +67,7 @@ const SignIn = () => {
           </button>
         </form>
         <p className="text-center my-3">or</p>
-        <button
-          className="bg-red-500 hover:bg-red-600 w-full py-2 text-white"
-          onClick={() => {
-            signInWithGoogle();
-          }}
-        >
-          Sign in with Google
-        </button>
+        
         <p className="text-center my-3">
           Don't have an account?{" "}
           <Link to="signUp" className="text-blue-500 hover:text-blue-600">
@@ -85,6 +80,7 @@ const SignIn = () => {
         </p>
       </div>
     </div>
+    
   );
 };
 
